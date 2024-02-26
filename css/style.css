@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Kakeka;
+    src: url('../font/KakekakeitalicpersonaluseNmi-Rpz16.otf');
+}
+
+h1 {
+    font-family: "Sigmar";
+    color: #ffffff;
+    text-align: center;
+}
+
+span, p, a{
+    font-family: "Comic Neue";
+    color: white;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+    background-repeat: no-repeat;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: all .5s;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: linear-gradient(180deg, #072c64, 5%, #03375a, 50%, #000000);
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+    box-shadow: 0 0 2px 0 rgba(73, 115, 255, .1), 0 0 4px 0 rgba(73, 115, 255, .2), 0 0 6px 0 rgba(73, 115, 255, .3), 0 0 8px 0 rgba(73, 115, 255, .4), 0 0 12px 0 rgba(73, 115, 255, .5), 0 0 18px 0 rgba(73, 115, 255, .6);
+    transition: all .5s ease-in-out;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 1rem;
+    padding-top: 8rem;
+}
+
+.body-content {
+    text-align: center;
+}
+
+.heading {
+    font-size: 3.5rem;
+}
+
+.description {
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description p {
+    max-width: 25rem;
+    line-height: 1.3rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.social {
+    cursor: pointer;
+    transition: all .3s;
+    padding: 1rem 1rem;
+}
+
+.social:hover {
+    transform: scale(1.5);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+    z-index: 15;
+    transform: translateY(-50%);
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.circle {
+    background-color: white;
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+    border-radius: 100rem;
+}
+
+.item span, a {
+    transition: all .2s;
+}
+
+.item:hover span:last-child {
+    transform: scale(1.2) translateX(9%);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 230, 0),
+    0 0 82px rgb(255, 234, 0),
+    0 0 92px rgb(217, 255, 0),
+    0 0 102px rgb(200, 255, 0),
+    0 0 151px rgb(195, 255, 0);
+}
+
+.item:hover a:last-child {
+    transform: scale(1.2) translateX(9%);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 230, 0),
+    0 0 82px rgb(255, 234, 0),
+    0 0 92px rgb(217, 255, 0),
+    0 0 102px rgb(200, 255, 0),
+    0 0 151px rgb(195, 255, 0);
+}
+
+.rwd-menu {
+    display: none;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 15;
+}
+
+.toggle-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    padding: 20%;
+}
+
+@media screen and (max-width:620px) {
+    .heading {
+        font-size: 2.5rem;
+    }
+    .menu {
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid red;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .rwd-menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width:880px) {
+    .menu {
+        transform: unset !important;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    img {
+        max-width: 10rem;
+    }
+
+    .description p {
+        font-size: 0.8rem;
+    }
+
+    .box {
+        padding: 0.8rem 2rem !important;
+    }
+}
